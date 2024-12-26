@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Doruk Akabay";
+
+    var userName = User.Identity.IsAuthenticated ? User.Identity.Name : string.Empty;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to @AppSettings.Title</h1>
+    <p>@AppSettings.Description</p>
+    <p>Current User: @userName</p>
+    <hr />
+
+    <!-- Navigation Buttons -->
+    <div class="d-flex justify-content-center mt-4">
+        <a class="btn btn-primary mx-2" asp-controller="Books" asp-action="Index">Books</a>
+        <a class="btn btn-success mx-2" asp-controller="Authors" asp-action="Index">Authors</a>
+        <a class="btn btn-warning mx-2" asp-controller="Genres" asp-action="Index">Genres</a>
+    </div>
+</div>
